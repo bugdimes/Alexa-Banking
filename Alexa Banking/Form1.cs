@@ -23,6 +23,12 @@ namespace Alexa_Banking
 
         }
 
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
         private void label1_Click(object sender, EventArgs e)
         {
             
@@ -37,14 +43,25 @@ namespace Alexa_Banking
         private void button2_Click(object sender, EventArgs e)
         {
             //login button
-            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename='"C:\Users\DivYesh Per-telz\Documents\Data.mdf"';Integrated Security=True;Connect Timeout=30");
+            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\v11.0;AttachDbFilename='C:\Users\DivYesh Per-telz\Documents\Data.mdf';Integrated Security=True;Connect Timeout=30");
+            SqlDataAdapter sda = new SqlDataAdapter("Select Count(*) From Login where userid='" +textBox1.Text + "' and Password='" +textBox2.Text + "'",con);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            if (dt.Rows[0][0].ToString() == "1")
+            {
+                //if userid and password is correct
+                this.Hide();
+                Main ss = new Main();
+                ss.Show();
+            }
+            else
+            {
+                MessageBox.Show("please enter valid username and password..");
+            }
 
-
-            this.Hide();
-            Main ss = new Main();
-            ss.Show();
         }
 
+      
         
     }
 }
