@@ -51,7 +51,7 @@ namespace Alexa_Banking
             {
                 //if userid and password is correct
                 this.Hide();
-                Main ss = new Main();
+                current ss = new current();
                 ss.Show();
             }
             else

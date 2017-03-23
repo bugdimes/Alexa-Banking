@@ -10,16 +10,29 @@ using System.Windows.Forms;
 
 namespace Alexa_Banking
 {
-    public partial class Main : Form
+    public partial class current : Form
     {
-        public Main()
+        public current()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void Main_Load(object sender, EventArgs e)
         {
-
+            
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        
+
+
+
+        
+
+        
     }
 }
