@@ -24,7 +24,8 @@ namespace Alexa_Banking
 
         private void button4_Click(object sender, EventArgs e)
         {
-            
+            new Form1().Show();
+            this.Hide();
         }
 
         

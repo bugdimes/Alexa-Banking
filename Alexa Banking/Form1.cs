@@ -35,14 +35,24 @@ namespace Alexa_Banking
 
         }
 
+        //advanced exit button
         private void button1_Click(object sender, EventArgs e)
-        {//exit button
-            this.Close();
+        {
+            if (MessageBox.Show("Are you sure you want to Exit ?", "Exit Confirmaion", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.No)
+            {
+                this.Show();//if no is selected then close nai thay and messagebox jatu rese
+            }
+            else
+            {
+                this.Close();//else yes click thase to close thai jase this form etle main form login varu
+            }
         }
 
+
+        //login button
         private void button2_Click(object sender, EventArgs e)
         {
-            //login button
+            
             SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\v11.0;AttachDbFilename='C:\Users\DivYesh Per-telz\Documents\Data.mdf';Integrated Security=True;Connect Timeout=30");
             SqlDataAdapter sda = new SqlDataAdapter("Select Count(*) From Login where userid='" +textBox1.Text + "' and Password='" +textBox2.Text + "'",con);
             DataTable dt = new DataTable();
