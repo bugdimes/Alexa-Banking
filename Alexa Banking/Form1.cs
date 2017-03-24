@@ -48,11 +48,11 @@ namespace Alexa_Banking
             }
         }
 
+        
 
         //login button
         private void button2_Click(object sender, EventArgs e)
         {
-            
             SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\v11.0;AttachDbFilename='C:\Users\DivYesh Per-telz\Documents\Data.mdf';Integrated Security=True;Connect Timeout=30");
             SqlDataAdapter sda = new SqlDataAdapter("Select Count(*) From Login where userid='" +textBox1.Text + "' and Password='" +textBox2.Text + "'",con);
             DataTable dt = new DataTable();

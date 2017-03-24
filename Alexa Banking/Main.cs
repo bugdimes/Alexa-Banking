@@ -22,18 +22,22 @@ namespace Alexa_Banking
             
         }
 
+
+
+        //advanced logout button
         private void button4_Click(object sender, EventArgs e)
         {
-            new Form1().Show();
-            this.Hide();
+            if (MessageBox.Show("Are you sure you want to Log Out ?", "Log Out Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.No)
+            {
+                this.Show();//if no click karse to main form band nai thay e view thase
+            }
+            else
+            {
+                new Form1().Show();//else logout means form1 view thase
+                this.Close();
+            }
+        
         }
 
-        
-
-
-
-        
-
-        
     }
 }

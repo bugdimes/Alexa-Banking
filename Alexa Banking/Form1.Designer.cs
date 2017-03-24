@@ -84,6 +84,7 @@
             // 
             // button2
             // 
+            this.button2.AccessibleName = "";
             this.button2.Location = new System.Drawing.Point(424, 206);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(90, 35);
@@ -102,6 +103,7 @@
             // 
             // Form1
             // 
+            this.AcceptButton = this.button2;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
