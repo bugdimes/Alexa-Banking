@@ -22,8 +22,6 @@ namespace Alexa_Banking
             
         }
 
-
-
         //advanced logout button
         private void button4_Click(object sender, EventArgs e)
         {
