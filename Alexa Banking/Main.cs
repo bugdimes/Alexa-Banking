@@ -37,5 +37,12 @@ namespace Alexa_Banking
         
         }
 
+        //account settings na form par javanu button
+        private void button1_Click(object sender, EventArgs e)
+        {
+            new Form2().Show();//opens account settings page
+            this.Close();
+        }
+
     }
 }
