@@ -16,5 +16,30 @@ namespace Alexa_Banking
         {
             InitializeComponent();
         }
+
+        private void txtsearch_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
