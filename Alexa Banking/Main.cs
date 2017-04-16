@@ -44,5 +44,11 @@ namespace Alexa_Banking
             this.Close();
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            new Form3().Show();
+            this.Close();//opens transaction page
+        }
+
     }
 }

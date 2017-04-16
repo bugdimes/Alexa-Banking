@@ -26,10 +26,12 @@ namespace Alexa_Banking
                 else
                 {
                     var query = from o in this.appData.Customers
-                                where o.FullName.Contains(txtsearch.Text) ||  o.Address == txtsearch.Text || o.Email == txtsearch.Text
-                                select o;// aa jaga e bank operator 
+                                where o.FullName.Contains(txtsearch.Text) ||  o.Address == txtsearch.Text
+                                || o.Email == txtsearch.Text select o;
+                    // aa jaga e bank operator 
                     //account no nakhine search kare e utility nakhvi padse
-                    // right now jo o.AccountNo == txtsearch.Text use karie to cant compare 
+                    // right now jo o.AccountNo == txtsearch.Text
+                    //o.AccountNo.Contains(txtsearch.Text) use karie to cant compare 
                     // int to string batave chhe coz e juno database accountno ne aji pan int consider kare chhe
                     //jo ke we changed it from accountno numbers to text but cant refresh 
                     //so see later
@@ -67,7 +69,9 @@ namespace Alexa_Banking
         {
             panel.Enabled = false;
             customersBindingSource.ResetBindings(false);
-            
+            current ss = new current();
+            ss.Show();
+            this.Close();
 
         }
 
@@ -127,5 +131,10 @@ namespace Alexa_Banking
             customersBindingSource.DataSource = this.appData.Customers;
 
         }
+        private void txtsearch_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        
     }
 }

@@ -31,14 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.btnSave = new System.Windows.Forms.Button();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.accountNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.accountTypeDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.balanceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fullNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mobileNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.imageDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
             this.customersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.appData = new Alexa_Banking.AppData();
             this.label2 = new System.Windows.Forms.Label();
@@ -64,6 +56,13 @@
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnNew = new System.Windows.Forms.Button();
             this.customersTableAdapter = new Alexa_Banking.AppDataTableAdapters.CustomersTableAdapter();
+            this.accountNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.accountTypeDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.balanceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fullNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mobileNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appData)).BeginInit();
@@ -92,8 +91,7 @@
             this.fullNameDataGridViewTextBoxColumn,
             this.mobileNoDataGridViewTextBoxColumn,
             this.emailDataGridViewTextBoxColumn,
-            this.addressDataGridViewTextBoxColumn,
-            this.imageDataGridViewImageColumn});
+            this.addressDataGridViewTextBoxColumn});
             this.dataGridView.DataSource = this.customersBindingSource;
             this.dataGridView.Location = new System.Drawing.Point(36, 311);
             this.dataGridView.Name = "dataGridView";
@@ -101,57 +99,6 @@
             this.dataGridView.TabIndex = 1;
             this.dataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridView_KeyDown);
             this.dataGridView.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dataGridView_KeyPress);
-            // 
-            // accountNoDataGridViewTextBoxColumn
-            // 
-            this.accountNoDataGridViewTextBoxColumn.DataPropertyName = "AccountNo";
-            this.accountNoDataGridViewTextBoxColumn.HeaderText = "AccountNo";
-            this.accountNoDataGridViewTextBoxColumn.Name = "accountNoDataGridViewTextBoxColumn";
-            // 
-            // accountTypeDataGridViewCheckBoxColumn
-            // 
-            this.accountTypeDataGridViewCheckBoxColumn.DataPropertyName = "AccountType";
-            this.accountTypeDataGridViewCheckBoxColumn.HeaderText = "AccountType";
-            this.accountTypeDataGridViewCheckBoxColumn.Name = "accountTypeDataGridViewCheckBoxColumn";
-            // 
-            // balanceDataGridViewTextBoxColumn
-            // 
-            this.balanceDataGridViewTextBoxColumn.DataPropertyName = "Balance";
-            this.balanceDataGridViewTextBoxColumn.HeaderText = "Balance";
-            this.balanceDataGridViewTextBoxColumn.Name = "balanceDataGridViewTextBoxColumn";
-            // 
-            // fullNameDataGridViewTextBoxColumn
-            // 
-            this.fullNameDataGridViewTextBoxColumn.DataPropertyName = "FullName";
-            this.fullNameDataGridViewTextBoxColumn.HeaderText = "FullName";
-            this.fullNameDataGridViewTextBoxColumn.Name = "fullNameDataGridViewTextBoxColumn";
-            this.fullNameDataGridViewTextBoxColumn.Width = 120;
-            // 
-            // mobileNoDataGridViewTextBoxColumn
-            // 
-            this.mobileNoDataGridViewTextBoxColumn.DataPropertyName = "MobileNo";
-            this.mobileNoDataGridViewTextBoxColumn.HeaderText = "MobileNo";
-            this.mobileNoDataGridViewTextBoxColumn.Name = "mobileNoDataGridViewTextBoxColumn";
-            this.mobileNoDataGridViewTextBoxColumn.Width = 10;
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            // 
-            // addressDataGridViewTextBoxColumn
-            // 
-            this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
-            this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
-            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
-            this.addressDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // imageDataGridViewImageColumn
-            // 
-            this.imageDataGridViewImageColumn.DataPropertyName = "Image";
-            this.imageDataGridViewImageColumn.HeaderText = "Image";
-            this.imageDataGridViewImageColumn.Name = "imageDataGridViewImageColumn";
             // 
             // customersBindingSource
             // 
@@ -335,6 +282,7 @@
             this.txtsearch.Name = "txtsearch";
             this.txtsearch.Size = new System.Drawing.Size(453, 20);
             this.txtsearch.TabIndex = 1;
+            this.txtsearch.TextChanged += new System.EventHandler(this.txtsearch_TextChanged);
             this.txtsearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtsearch_KeyPress);
             // 
             // label6
@@ -380,10 +328,59 @@
             // 
             this.customersTableAdapter.ClearBeforeFill = true;
             // 
+            // accountNoDataGridViewTextBoxColumn
+            // 
+            this.accountNoDataGridViewTextBoxColumn.DataPropertyName = "AccountNo";
+            this.accountNoDataGridViewTextBoxColumn.HeaderText = "AccountNo";
+            this.accountNoDataGridViewTextBoxColumn.Name = "accountNoDataGridViewTextBoxColumn";
+            this.accountNoDataGridViewTextBoxColumn.Width = 50;
+            // 
+            // accountTypeDataGridViewCheckBoxColumn
+            // 
+            this.accountTypeDataGridViewCheckBoxColumn.DataPropertyName = "AccountType";
+            this.accountTypeDataGridViewCheckBoxColumn.HeaderText = "AccountType";
+            this.accountTypeDataGridViewCheckBoxColumn.Name = "accountTypeDataGridViewCheckBoxColumn";
+            this.accountTypeDataGridViewCheckBoxColumn.Width = 75;
+            // 
+            // balanceDataGridViewTextBoxColumn
+            // 
+            this.balanceDataGridViewTextBoxColumn.DataPropertyName = "Balance";
+            this.balanceDataGridViewTextBoxColumn.HeaderText = "Balance";
+            this.balanceDataGridViewTextBoxColumn.Name = "balanceDataGridViewTextBoxColumn";
+            this.balanceDataGridViewTextBoxColumn.Width = 75;
+            // 
+            // fullNameDataGridViewTextBoxColumn
+            // 
+            this.fullNameDataGridViewTextBoxColumn.DataPropertyName = "FullName";
+            this.fullNameDataGridViewTextBoxColumn.HeaderText = "FullName";
+            this.fullNameDataGridViewTextBoxColumn.Name = "fullNameDataGridViewTextBoxColumn";
+            this.fullNameDataGridViewTextBoxColumn.Width = 129;
+            // 
+            // mobileNoDataGridViewTextBoxColumn
+            // 
+            this.mobileNoDataGridViewTextBoxColumn.DataPropertyName = "MobileNo";
+            this.mobileNoDataGridViewTextBoxColumn.HeaderText = "MobileNo";
+            this.mobileNoDataGridViewTextBoxColumn.Name = "mobileNoDataGridViewTextBoxColumn";
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // addressDataGridViewTextBoxColumn
+            // 
+            this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
+            this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
+            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
+            this.addressDataGridViewTextBoxColumn.Width = 200;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(849, 533);
             this.Controls.Add(this.btnNew);
             this.Controls.Add(this.btnEdit);
@@ -395,6 +392,7 @@
             this.Controls.Add(this.btnSave);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Form2";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Account Settings";
             this.Load += new System.EventHandler(this.Form2_Load);
@@ -445,6 +443,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn mobileNoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewImageColumn imageDataGridViewImageColumn;
     }
 }
