@@ -45,6 +45,7 @@ namespace Alexa_Banking
             else
             {
                 this.Close();//else yes click thase to close thai jase this form etle main form login varu
+                Application.Exit();
             }
         }
 

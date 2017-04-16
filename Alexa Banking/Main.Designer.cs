@@ -85,6 +85,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button4);
             this.Name = "current";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Welcome";
             this.Load += new System.EventHandler(this.Main_Load);
